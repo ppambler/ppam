@@ -1,0 +1,1432 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+  
+
+<link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="jQuery," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="★引子​    你说我该如何学习jQuery？这个……先学着先吧！ ★你是几个意思◇我要封装一个函数​    哦！你是要写个函数，对吧！">
+<meta name="keywords" content="jQuery">
+<meta property="og:type" content="article">
+<meta property="og:title" content="jQuery不过如此？">
+<meta property="og:url" content="http://yoursite.com/2018/04/27/jQuery不过如此？/index.html">
+<meta property="og:site_name" content="Ambler">
+<meta property="og:description" content="★引子​    你说我该如何学习jQuery？这个……先学着先吧！ ★你是几个意思◇我要封装一个函数​    哦！你是要写个函数，对吧！">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://otty6pwsj.bkt.clouddn.com/18-4-27/66417465.jpg">
+<meta property="og:image" content="http://otty6pwsj.bkt.clouddn.com/18-4-27/65706885.jpg">
+<meta property="og:updated_time" content="2018-04-27T11:06:36.078Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="jQuery不过如此？">
+<meta name="twitter:description" content="★引子​    你说我该如何学习jQuery？这个……先学着先吧！ ★你是几个意思◇我要封装一个函数​    哦！你是要写个函数，对吧！">
+<meta name="twitter:image" content="http://otty6pwsj.bkt.clouddn.com/18-4-27/66417465.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/04/27/jQuery不过如此？/"/>
+
+
+
+
+
+  <title>jQuery不过如此？ | Ambler</title>
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?37b2631084262ba63364a7b95ade0726";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Ambler</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-something">
+          <a href="/something/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-something"></i> <br />
+            
+            杂记
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/27/jQuery不过如此？/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Ambler">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://i.loli.net/2018/04/03/5ac26820787d7.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Ambler">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">jQuery不过如此？</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-27T18:48:31+08:00">
+                2018-04-27
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/JavaScript/" itemprop="url" rel="index">
+                    <span itemprop="name">JavaScript</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2018/04/27/jQuery不过如此？/" class="leancloud_visitors" data-flag-title="jQuery不过如此？">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="★引子"><a href="#★引子" class="headerlink" title="★引子"></a>★引子</h2><p>​    你说我该如何学习jQuery？这个……先学着先吧！</p>
+<h2 id="★你是几个意思"><a href="#★你是几个意思" class="headerlink" title="★你是几个意思"></a>★你是几个意思</h2><h3 id="◇我要封装一个函数"><a href="#◇我要封装一个函数" class="headerlink" title="◇我要封装一个函数"></a>◇我要封装一个函数</h3><p>​    哦！你是要写个函数，对吧！</p>
+<a id="more"></a>
+<h3 id="◇我要一个命名空间"><a href="#◇我要一个命名空间" class="headerlink" title="◇我要一个命名空间"></a>◇我要一个命名空间</h3><p>​    我想，你要为一个对象取一个名字，是不是，小白？如果是的话，叫「小花」不错，我表示强烈建议！就像是这样：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> 小花 = &#123;&#125;</span><br><span class="line">小花.getWechat()</span><br></pre></td></tr></table></figure>
+<p>这个小花就是「命名空间」，旗下有个要自己实现的「得到小花微信号」的方法</p>
+<p>如果要关联jQuery的话，那就这样：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> dom = &#123;&#125;</span><br><span class="line">dom.getSibling(node) <span class="comment">//得到节点的兄弟姐妹元素</span></span><br><span class="line">dom.addClass(node, &#123;<span class="attr">a</span>: <span class="literal">true</span>,<span class="attr">b</span>: <span class="literal">false</span>&#125;) <span class="comment">//根据true/false,为节点添加类名</span></span><br></pre></td></tr></table></figure>
+<p>​    这里的dom同样是个命名空间，把封装好的函数，取其函数名，放在dom下面，那么，这个命名空间才有它存在的意义。其实说白了，命名空间就是个对象呗！这个对象，给了函数，生活的空间。所以你应该知道你要的是什么了吧！</p>
+<h3 id="◇我需要一个API"><a href="#◇我需要一个API" class="headerlink" title="◇我需要一个API"></a>◇我需要一个API</h3><p>我觉得你是想要一个别人提供给你用的函数</p>
+<h2 id="★我需要一些套路"><a href="#★我需要一些套路" class="headerlink" title="★我需要一些套路"></a>★我需要一些套路</h2><h3 id="◇封装一个函数的正确姿势"><a href="#◇封装一个函数的正确姿势" class="headerlink" title="◇封装一个函数的正确姿势"></a>◇封装一个函数的正确姿势</h3><ol>
+<li>随意起名</li>
+<li>理清输入输出</li>
+<li>改个好听的名字</li>
+</ol>
+<h3 id="◇优化代码"><a href="#◇优化代码" class="headerlink" title="◇优化代码"></a>◇优化代码</h3><ol>
+<li>如果出现类似的demo就存在优化的可能</li>
+</ol>
+<h2 id="★jQuery是啥？我不知道"><a href="#★jQuery是啥？我不知道" class="headerlink" title="★jQuery是啥？我不知道"></a>★jQuery是啥？我不知道</h2><h3 id="◇自己封装两个函数"><a href="#◇自己封装两个函数" class="headerlink" title="◇自己封装两个函数"></a>◇自己封装两个函数</h3><h4 id="得到节点item3的兄弟姐妹"><a href="#得到节点item3的兄弟姐妹" class="headerlink" title="得到节点item3的兄弟姐妹"></a>得到节点item3的兄弟姐妹</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">li</span> <span class="attr">id</span>=<span class="string">"item1"</span>&gt;</span>选项1<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">li</span> <span class="attr">id</span>=<span class="string">"item2"</span>&gt;</span>选项2<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">li</span> <span class="attr">id</span>=<span class="string">"item3"</span>&gt;</span>选项3<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">li</span> <span class="attr">id</span>=<span class="string">"item4"</span>&gt;</span>选项4<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">li</span> <span class="attr">id</span>=<span class="string">"item5"</span>&gt;</span>选项5<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript">        <span class="function"><span class="keyword">function</span> <span class="title">getSiblings</span>(<span class="params">node</span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">            <span class="comment">// 得到爸爸的所有的儿子，包括我</span></span></span><br><span class="line"><span class="javascript">            <span class="keyword">var</span> allChildren = node.parentNode.children</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="javascript">            <span class="keyword">var</span> array = &#123;</span></span><br><span class="line"><span class="undefined">                length: 0</span></span><br><span class="line"><span class="undefined">            &#125;</span></span><br><span class="line"><span class="javascript">            <span class="comment">// 去掉我</span></span></span><br><span class="line"><span class="javascript">            <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; allChildren.length; i++) &#123;</span></span><br><span class="line"><span class="javascript">                <span class="keyword">if</span> (allChildren[i] !== node) &#123;</span></span><br><span class="line"><span class="undefined">                    array[array.length] = allChildren[i]</span></span><br><span class="line"><span class="undefined">                    array.length += 1</span></span><br><span class="line"><span class="undefined">                &#125;</span></span><br><span class="line"><span class="undefined">            &#125;</span></span><br><span class="line"><span class="javascript">            <span class="keyword">return</span> array</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="javascript">        <span class="built_in">console</span>.log(getSiblings(item3))</span></span><br><span class="line"><span class="javascript">        <span class="comment">//&#123;0: li#item1, 1: li#item2, 2: li#item4, 3: li#item5, length: 4&#125;</span></span></span><br><span class="line"><span class="undefined">    </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h4 id="给节点item3添加3个class"><a href="#给节点item3添加3个class" class="headerlink" title="给节点item3添加3个class"></a>给节点item3添加3个class</h4><ul>
+<li><p>第一种方式：简单直接法</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 添加类a、b、c</span></span><br><span class="line"><span class="comment">//简单粗暴添加</span></span><br><span class="line">item3.classList.add(<span class="string">'a'</span>)</span><br><span class="line">item3.classList.add(<span class="string">'b'</span>)</span><br><span class="line">item3.classList.add(<span class="string">'c'</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">// &lt;li id="item3" class="a b c"&gt;选项3&lt;/li&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>第二种方式：遍历添加法</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">    <span class="comment">//通过数组的方式</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> classArray = [<span class="string">'a'</span>,<span class="string">'b'</span>,<span class="string">'c'</span>]</span><br><span class="line">    classArray.forEach(<span class="function"><span class="params">value</span> =&gt;</span> &#123;</span><br><span class="line">        item3.classList.add(value)</span><br><span class="line">    &#125;);</span><br><span class="line"><span class="comment">// &lt;li id="item3" class="a b c"&gt;选项3&lt;/li&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>第三种方式：集「添加和移除」于一身法</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">       <span class="comment">// 第3种更强大法：</span></span><br><span class="line">       <span class="keyword">var</span> classHash = &#123;</span><br><span class="line">           <span class="string">'a'</span> : <span class="literal">true</span>,</span><br><span class="line">           <span class="string">'b'</span> : <span class="literal">false</span>,</span><br><span class="line">           <span class="string">'c'</span> : <span class="literal">true</span></span><br><span class="line">       &#125;</span><br><span class="line">       <span class="keyword">for</span>(<span class="keyword">let</span> key <span class="keyword">in</span> classHash) &#123;</span><br><span class="line">           <span class="keyword">var</span> value = classHash[key]</span><br><span class="line">           <span class="keyword">if</span> (value) &#123;</span><br><span class="line">               item3.classList.add(key)</span><br><span class="line">           &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">               item3.classList.remove(key)</span><br><span class="line">           &#125;</span><br><span class="line">       &#125;</span><br><span class="line"><span class="comment">//&lt;li id="item3" class="a c"&gt;选项3&lt;/li&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>封装为函数</p>
+<p>得到封装好的addClass：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">addClass</span>(<span class="params">node, classHash</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> key <span class="keyword">in</span> classHash) &#123;</span><br><span class="line">        <span class="keyword">var</span> value = classHash[key]</span><br><span class="line">        <span class="keyword">if</span> (value) &#123;</span><br><span class="line">            item3.classList.add(key)</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            item3.classList.remove(key)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">addClass(item3, classHash)</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="◇优化addClass"><a href="#◇优化addClass" class="headerlink" title="◇优化addClass"></a>◇优化addClass</h3><p>你是一个对象，想要调用一个方法，有两个姿势：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">obj.x()</span><br><span class="line">obj[<span class="string">'x'</span>]()</span><br></pre></td></tr></table></figure>
+<p>所以可有：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">addClass</span>(<span class="params">node, classHash</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> key <span class="keyword">in</span> classHash) &#123;</span><br><span class="line">        <span class="keyword">var</span> value = classHash[key]</span><br><span class="line">        <span class="keyword">var</span> methodName = value ? <span class="string">'add'</span> : <span class="string">'remove'</span></span><br><span class="line">        node.classList[methodName](key)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">addClass(item3, classHash)</span><br></pre></td></tr></table></figure>
+<h3 id="◇关联这两个API"><a href="#◇关联这两个API" class="headerlink" title="◇关联这两个API"></a>◇关联这两个API</h3><h4 id="为什么需要关联"><a href="#为什么需要关联" class="headerlink" title="为什么需要关联?"></a>为什么需要关联?</h4><p>​    这两个API都是在操作节点，一个是得到节点的兄弟姐妹；一个是为节点添加/移除class。而DOM的API都在document旗下。所以，依葫芦画瓢，我们同样也可以这样做。</p>
+<h4 id="如何关联？"><a href="#如何关联？" class="headerlink" title="如何关联？"></a>如何关联？</h4><p>​    在window旗下，命名一个叫小花的空间，然后在小花旗下，绑定这两个API</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">window</span>.小花 = &#123;&#125;</span><br><span class="line">小花.getSiblings = getSiblings</span><br><span class="line">小花.addClass = addClass</span><br><span class="line">小花.getSiblings(item3)</span><br><span class="line">小花.addClass(item3, &#123; <span class="attr">a</span>: <span class="literal">true</span>, <span class="attr">b</span>: <span class="literal">false</span>, <span class="attr">c</span>: <span class="literal">true</span> &#125;)</span><br></pre></td></tr></table></figure>
+<h4 id="为什么要用「小花」这个命名空间？"><a href="#为什么要用「小花」这个命名空间？" class="headerlink" title="为什么要用「小花」这个命名空间？"></a>为什么要用「小花」这个命名空间？</h4><ol>
+<li>这两个API谁写的？翠花写的，你确定？</li>
+<li>我写了几十个API，厉害吧！厉害，我每次要用你API的时候，都不知去哪儿找，就像是无招牌的店，听说有家店做的「藤条焖猪肉」特别好吃，可是在哪？</li>
+<li>为什么，我引入你写的API，我写的那些demo，出bug了，即把人家的全局变量给覆盖了。他人，一定发誓，我一定不会再用你写的API了，发誓三连……</li>
+<li>用了命名空间，就不会让声明式的函数写法，覆盖了他人的全局变量</li>
+</ol>
+<h3 id="◇能不能把-node-放在前面"><a href="#◇能不能把-node-放在前面" class="headerlink" title="◇能不能把 node 放在前面"></a>◇能不能把 node 放在前面</h3><p>比如说这样：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">node.getSiblings()</span><br><span class="line">node.addClass()</span><br></pre></td></tr></table></figure>
+<p>给出两种方法</p>
+<h4 id="第一种扩展-Node-接口"><a href="#第一种扩展-Node-接口" class="headerlink" title="第一种扩展 Node 接口"></a>第一种扩展 Node 接口</h4><p>​    直接在 Node.prototype 上加函数，函数里this很是关键</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">Node.prototype.getSiblings = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> allChildren = <span class="keyword">this</span>.parentNode.children</span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> array = &#123;</span><br><span class="line">        length: <span class="number">0</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 去掉我</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; allChildren.length; i++) &#123;</span><br><span class="line">        <span class="keyword">if</span> (allChildren[i] !== <span class="keyword">this</span>) &#123;</span><br><span class="line">            array[array.length] = allChildren[i]</span><br><span class="line">            array.length += <span class="number">1</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> array</span><br><span class="line">&#125;</span><br><span class="line">Node.prototype.addClass = <span class="function"><span class="keyword">function</span> (<span class="params">classArray</span>) </span>&#123;</span><br><span class="line">    classArray.forEach(<span class="function"><span class="params">value</span> =&gt;</span> &#123;</span><br><span class="line">        <span class="keyword">this</span>.classList.add(value)</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;</span><br><span class="line">item3.addClass([<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>])</span><br><span class="line"><span class="built_in">console</span>.log(item3.getSiblings())</span><br></pre></td></tr></table></figure>
+<p>​    如果你不能理解这个this表示的是什么，可以这样：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">item3.addClass.call(item3,[<span class="string">'a'</span>,<span class="string">'b'</span>,<span class="string">'c'</span>])</span><br><span class="line"><span class="built_in">console</span>.log(item3.getSiblings.call(item3))</span><br></pre></td></tr></table></figure>
+<p>call()的第一个参数，就是this。有些时候，demo虽然简洁了许多，可是理解起来也会难上几分，就如这个this一样，调用函数是方便了，可是却不好理解这个this，为啥指向调用者？</p>
+<p>请记住：this是call的第一个参数。</p>
+<blockquote>
+<p>你他妈不明白this是因为你他妈不用call</p>
+</blockquote>
+<h4 id="第二种新的接口-BetterNode"><a href="#第二种新的接口-BetterNode" class="headerlink" title="第二种新的接口 BetterNode"></a>第二种新的接口 BetterNode</h4><p>​    从构造函数着手，Node的升级版，也叫「无侵入」</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Node的升级版：</span></span><br><span class="line"><span class="built_in">window</span>.Node2 = <span class="function"><span class="keyword">function</span> (<span class="params">node</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">        getSiblings: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">            <span class="keyword">var</span> allChildren = node.parentNode.children</span><br><span class="line"></span><br><span class="line">            <span class="keyword">var</span> array = &#123;</span><br><span class="line">                length: <span class="number">0</span></span><br><span class="line">            &#125;</span><br><span class="line">            <span class="comment">// 去掉我</span></span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; allChildren.length; i++) &#123;</span><br><span class="line">                <span class="keyword">if</span> (allChildren[i] !== node) &#123;</span><br><span class="line">                    array[array.length] = allChildren[i]</span><br><span class="line">                    array.length += <span class="number">1</span></span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">return</span> array</span><br><span class="line">        &#125;,</span><br><span class="line">        addClass: <span class="function"><span class="keyword">function</span> (<span class="params">classArray</span>) </span>&#123;</span><br><span class="line">            classArray.forEach(<span class="function"><span class="params">value</span> =&gt;</span> &#123;</span><br><span class="line">                node.classList.add(value)</span><br><span class="line">            &#125;);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> node2 = Node2(item3)</span><br><span class="line"><span class="built_in">console</span>.log(node2.getSiblings())</span><br><span class="line">node2.addClass([<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>])</span><br><span class="line"><span class="built_in">console</span>.dir(node2)</span><br></pre></td></tr></table></figure>
+<h3 id="◇把-Node2-改个名字吧"><a href="#◇把-Node2-改个名字吧" class="headerlink" title="◇把 Node2 改个名字吧"></a>◇把 Node2 改个名字吧</h3><p>如这样：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">jQuery</span>(<span class="params">node</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">        element: node,</span><br><span class="line">        getSiblings: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line"></span><br><span class="line">        &#125;,</span><br><span class="line">        addClass: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">let</span> node =<span class="built_in">document</span>.getElementById(<span class="string">'x'</span>)</span><br><span class="line"><span class="keyword">let</span> node2 =jQuery(node)</span><br><span class="line">node2.getSiblings()</span><br><span class="line">node2.addClass()</span><br></pre></td></tr></table></figure>
+<h3 id="◇再给个缩写吧-alias"><a href="#◇再给个缩写吧-alias" class="headerlink" title="◇再给个缩写吧 alias"></a>◇再给个缩写吧 alias</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">window</span>.$ = jQuery</span><br></pre></td></tr></table></figure>
+<h3 id="◇改进jQuery"><a href="#◇改进jQuery" class="headerlink" title="◇改进jQuery"></a>◇改进jQuery</h3><h4 id="可传入选择器字符串"><a href="#可传入选择器字符串" class="headerlink" title="可传入选择器字符串"></a>可传入选择器字符串</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">window</span>.jQuery = <span class="function"><span class="keyword">function</span> (<span class="params">nodeOrSelector</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> node</span><br><span class="line">    <span class="comment">// 特性检测</span></span><br><span class="line">    <span class="keyword">if</span>(<span class="keyword">typeof</span> nodeOrSelector === <span class="string">'string'</span>) &#123;</span><br><span class="line">        node = <span class="built_in">document</span>.querySelector(nodeOrSelector)</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        node = nodeOrSelector</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">        getSiblings: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;……&#125;,</span><br><span class="line">        addClass: <span class="function"><span class="keyword">function</span> (<span class="params">classArray</span>) </span>&#123;……&#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>​    这里用到了闭包，getSiblings和addClass都用到了node，那么它们就构成了一个闭包。不会说，你调用了这个jQuery函数完毕后，然后局部变量node存储的值就被释放掉了，由于这个局部变量跟返回值对象中的任意一个方法（或者说是函数）构成了闭包，这意味着就像是「全职猎人中酷拉比卡为了获取强大的力量，把它念能力实质化的锁链，跟自己的心脏绑在一起了」。如果释放掉，那么这个对象返回值，没有任何意义。「没有把念能力跟自己的心脏绑定在一起，就无法获得强大的力量，何谈去复仇旅团呢？」</p>
+<p>就像是这样：</p>
+<p><img src="http://otty6pwsj.bkt.clouddn.com/18-4-27/66417465.jpg" alt=""></p>
+<p>有时候，你问为什么局部变量没有被释放掉？回答说「闭包」啊！可是你依旧产生了质疑，如「函数调用栈不是入栈然后出栈吗？一念生一念死，为啥还会有记忆……」。其实你可以反问自己，「为啥调用函数的时候，会有调用栈的概念？」「为啥调用函数的时候，会有闭包的概念？」</p>
+<p>他妈的说白了「概念不会凭空产生，它的存在总有它存在的意义，也许合理也许不合理，它总有一个理由，占着茅坑不搞事」，简而言之，就是「哥的世界你不懂，45度角仰望天空……」</p>
+<blockquote>
+<p>如果你觉得复杂了，就是没有想清楚</p>
+</blockquote>
+<p>如果你觉得闭包很复杂，那么我想你需要静静，不要去想它……</p>
+<h4 id="操纵多个节点"><a href="#操纵多个节点" class="headerlink" title="操纵多个节点"></a>操纵多个节点</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">window</span>.jQuery = <span class="function"><span class="keyword">function</span> (<span class="params">nodeOrSelector</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> nodes = &#123;&#125;</span><br><span class="line">    <span class="comment">//类型检测：</span></span><br><span class="line">    <span class="keyword">if</span> (<span class="keyword">typeof</span> nodeOrSelector === <span class="string">'string'</span>) &#123;</span><br><span class="line">        <span class="keyword">let</span> temp = <span class="built_in">document</span>.querySelectorAll(nodeOrSelector) <span class="comment">//伪数组</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; temp.length; i++) &#123;</span><br><span class="line">            nodes[i] = temp[i]</span><br><span class="line">        &#125;</span><br><span class="line">        nodes.length = temp.length</span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (nodeOrSelector <span class="keyword">instanceof</span> Node) &#123;</span><br><span class="line">        nodes = &#123;</span><br><span class="line">            <span class="number">0</span>: nodeOrSelector,</span><br><span class="line">            length: <span class="number">1</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    nodes.getSiblings = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    &#125;</span><br><span class="line">    nodes.addClass = <span class="function"><span class="keyword">function</span> (<span class="params">classArray</span>) </span>&#123;</span><br><span class="line">        classArray.forEach(<span class="function"><span class="params">value</span> =&gt;</span> &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; nodes.length; i++) &#123;</span><br><span class="line">                nodes[i].classList.add(value)</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> nodes</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> node2 = jQuery(<span class="string">'ul&gt;li'</span>)</span><br><span class="line">node2.addClass([<span class="string">'blue'</span>])</span><br></pre></td></tr></table></figure>
+<h4 id="添加读写文本的API"><a href="#添加读写文本的API" class="headerlink" title="添加读写文本的API"></a>添加读写文本的API</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">nodes.text = <span class="function"><span class="keyword">function</span> (<span class="params">text</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (text === <span class="literal">undefined</span>) &#123;</span><br><span class="line">        <span class="keyword">var</span> texts = []</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; nodes.length; i++) &#123;</span><br><span class="line">            texts.push(nodes[i].textContent)</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> texts</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; nodes.length; i++) &#123;</span><br><span class="line">            nodes[i].textContent = text</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> node2 = jQuery(<span class="string">'ul&gt;li'</span>)</span><br><span class="line">node2.addClass([<span class="string">'blue'</span>])</span><br><span class="line"><span class="built_in">console</span>.log(node2.text())</span><br><span class="line">node2.text(<span class="string">'hi'</span>)</span><br></pre></td></tr></table></figure>
+<h2 id="★jQuery初探"><a href="#★jQuery初探" class="headerlink" title="★jQuery初探"></a>★jQuery初探</h2><h3 id="◇调用jQuery这个函数"><a href="#◇调用jQuery这个函数" class="headerlink" title="◇调用jQuery这个函数"></a>◇调用jQuery这个函数</h3><p>jQuery是框架还是库？</p>
+<blockquote>
+<p>Framework 帮你设计架构，而 library 帮你写代码。所以jQuery是库，不是框架。</p>
+</blockquote>
+<p>初始化网页文档：要引入jQuery库</p>
+<ul>
+<li><p>骨架：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">li</span>&gt;</span>第1项数<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">li</span>&gt;</span>第2项数<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">li</span> <span class="attr">id</span>=<span class="string">'item3'</span>&gt;</span>第3项数<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">li</span>&gt;</span>第4项数<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">li</span>&gt;</span>第5项数<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>行为：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> nodes = jQuery(<span class="string">'ul&gt;li'</span>)</span><br><span class="line"><span class="built_in">console</span>.dir(nodes)</span><br><span class="line"><span class="keyword">var</span> dd = jQuery()</span><br><span class="line"><span class="built_in">console</span>.dir(dd)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>结果：</p>
+<p><img src="http://otty6pwsj.bkt.clouddn.com/18-4-27/65706885.jpg" alt=""></p>
+<p>可见这个jQuery库是把其API写到Object的原型里去的，这样一来就不用浪费资源了</p>
+</li>
+</ul>
+<h3 id="◇依旧可以使用DOM-API"><a href="#◇依旧可以使用DOM-API" class="headerlink" title="◇依旧可以使用DOM API"></a>◇依旧可以使用DOM API</h3><ul>
+<li><p>行为：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> item3 = jQuery(<span class="string">'#item3'</span>)</span><br><span class="line"><span class="built_in">console</span>.dir(item3)</span><br><span class="line">item3[<span class="number">0</span>].classList.add(<span class="string">'blue'</span>)</span><br></pre></td></tr></table></figure>
+<p>只不过jQuery返回的是伪数组，所以你需要添加下标才可以，不过即便如此，我想你也不想用DOM API了吧！</p>
+</li>
+</ul>
+<h3 id="◇使用一些API"><a href="#◇使用一些API" class="headerlink" title="◇使用一些API"></a>◇使用一些API</h3><ul>
+<li><p>添加类、移除类：只是追加，不会覆盖掉原来的。移除后回到默认的蓝色</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">item3.addClass(<span class="string">'red'</span>)</span><br><span class="line">item3.removeClass(<span class="string">'red'</span>)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>链式操作：移除单前类，再添加，相当于是覆盖；</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">item3.removeClass(<span class="string">'blue'</span>).addClass(<span class="string">'red'</span>)</span><br><span class="line">item3.removeClass(<span class="string">'red'</span>)</span><br></pre></td></tr></table></figure>
+<p>移除红色后，没有回到蓝色</p>
+</li>
+<li><p>开关</p>
+<p>添加2个button元素：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">id</span>=<span class="string">'x'</span>&gt;</span>X<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">id</span>=<span class="string">'y'</span>&gt;</span>Y<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>鼠标点击按钮，就会切换item3的字体颜色：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">x.onclick = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  item3.toggleClass(<span class="string">'yellow'</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>效果就像是，天黑开灯，睡觉关灯</p>
+</li>
+<li><p>为多个元素添加不同的类：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> classes = [<span class="string">'blue'</span>,<span class="string">'red'</span>,<span class="string">'yellow'</span>,<span class="string">'green'</span>,<span class="string">'yellowgreen'</span>]</span><br><span class="line"></span><br><span class="line">y.onclick = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  nodes.addClass(<span class="function"><span class="keyword">function</span>(<span class="params">index,currentClass</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> classes[index]</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="★jQuery不过如此？"><a href="#★jQuery不过如此？" class="headerlink" title="★jQuery不过如此？"></a>★jQuery不过如此？</h2><ol>
+<li>jQuery 在兼容性方面做得很好，1.7 版本兼容到 IE 6</li>
+<li>jQuery 还有动画、AJAX 等模块，不止 DOM 操作</li>
+<li>jQuery 的功能更丰富</li>
+<li>jQuery 使用了 prototype，我们没有使用，需要new的知识点</li>
+</ol>
+<h2 id="★总结"><a href="#★总结" class="headerlink" title="★总结"></a>★总结</h2><ul>
+<li>在非迫不得的情况下，不需要自己写操作的页面API，毕竟你没有jQuery做的好，如兼容问题</li>
+<li>如果要想操作页面，目前jQuery就能很好地满足，其它同类型的库没有必要引入</li>
+<li>拿到一个节点或多个节点，然后调用API，我想这就是使用jQuery</li>
+<li>如果是jQuery对象，那么接收的变量最好加上个\$，以免混淆 了普通的DOM对象，如 <code>var $node = jQuery(&#39;ul&gt;li&#39;)</code></li>
+<li>如何看jQuery文档？先记住一些常见的关于其API的单词，然后学会一个API如何使用后，根据需求去使用API。如果没有理解这个API关于中文的概述，那么试着看看它的英文</li>
+<li>jQuery很不简单，但我们的使用是简单的，不然，也不会红了那么多年</li>
+</ul>
+<h2 id="★参考资料"><a href="#★参考资料" class="headerlink" title="★参考资料"></a>★参考资料</h2><p><a href="https://www.zhihu.com/question/30693031" target="_blank" rel="noopener">jQuery 是库（library）还是框架(framework)?</a></p>
+<p><a href="https://www.w3cplus.com/blog/100.html" target="_blank" rel="noopener">jQuery中.addClass()和.removeClass()</a></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="//i.loli.net/2018/04/13/5acf9e95af815.jpg" alt="Ambler 微信支付"/>
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="//i.loli.net/2018/04/13/5acf9fd416a28.jpg" alt="Ambler 支付宝"/>
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/jQuery/" rel="tag"># jQuery</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/04/26/实现一个jQuery的API/" rel="next" title="实现一个jQuery的API">
+                <i class="fa fa-chevron-left"></i> 实现一个jQuery的API
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="lv-container" data-id="city" data-uid="MTAyMC8yOTMyNS81ODkz"></div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="https://i.loli.net/2018/04/03/5ac26820787d7.png"
+                alt="Ambler" />
+            
+              <p class="site-author-name" itemprop="name">Ambler</p>
+              <p class="site-description motion-element" itemprop="description">早睡早起</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/ppambler" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#★引子"><span class="nav-number">1.</span> <span class="nav-text">★引子</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#★你是几个意思"><span class="nav-number">2.</span> <span class="nav-text">★你是几个意思</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#◇我要封装一个函数"><span class="nav-number">2.1.</span> <span class="nav-text">◇我要封装一个函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#◇我要一个命名空间"><span class="nav-number">2.2.</span> <span class="nav-text">◇我要一个命名空间</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#◇我需要一个API"><span class="nav-number">2.3.</span> <span class="nav-text">◇我需要一个API</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#★我需要一些套路"><span class="nav-number">3.</span> <span class="nav-text">★我需要一些套路</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#◇封装一个函数的正确姿势"><span class="nav-number">3.1.</span> <span class="nav-text">◇封装一个函数的正确姿势</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#◇优化代码"><span class="nav-number">3.2.</span> <span class="nav-text">◇优化代码</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#★jQuery是啥？我不知道"><span class="nav-number">4.</span> <span class="nav-text">★jQuery是啥？我不知道</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#◇自己封装两个函数"><span class="nav-number">4.1.</span> <span class="nav-text">◇自己封装两个函数</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#得到节点item3的兄弟姐妹"><span class="nav-number">4.1.1.</span> <span class="nav-text">得到节点item3的兄弟姐妹</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#给节点item3添加3个class"><span class="nav-number">4.1.2.</span> <span class="nav-text">给节点item3添加3个class</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#◇优化addClass"><span class="nav-number">4.2.</span> <span class="nav-text">◇优化addClass</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#◇关联这两个API"><span class="nav-number">4.3.</span> <span class="nav-text">◇关联这两个API</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#为什么需要关联"><span class="nav-number">4.3.1.</span> <span class="nav-text">为什么需要关联?</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#如何关联？"><span class="nav-number">4.3.2.</span> <span class="nav-text">如何关联？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#为什么要用「小花」这个命名空间？"><span class="nav-number">4.3.3.</span> <span class="nav-text">为什么要用「小花」这个命名空间？</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#◇能不能把-node-放在前面"><span class="nav-number">4.4.</span> <span class="nav-text">◇能不能把 node 放在前面</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#第一种扩展-Node-接口"><span class="nav-number">4.4.1.</span> <span class="nav-text">第一种扩展 Node 接口</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#第二种新的接口-BetterNode"><span class="nav-number">4.4.2.</span> <span class="nav-text">第二种新的接口 BetterNode</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#◇把-Node2-改个名字吧"><span class="nav-number">4.5.</span> <span class="nav-text">◇把 Node2 改个名字吧</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#◇再给个缩写吧-alias"><span class="nav-number">4.6.</span> <span class="nav-text">◇再给个缩写吧 alias</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#◇改进jQuery"><span class="nav-number">4.7.</span> <span class="nav-text">◇改进jQuery</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#可传入选择器字符串"><span class="nav-number">4.7.1.</span> <span class="nav-text">可传入选择器字符串</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#操纵多个节点"><span class="nav-number">4.7.2.</span> <span class="nav-text">操纵多个节点</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#添加读写文本的API"><span class="nav-number">4.7.3.</span> <span class="nav-text">添加读写文本的API</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#★jQuery初探"><span class="nav-number">5.</span> <span class="nav-text">★jQuery初探</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#◇调用jQuery这个函数"><span class="nav-number">5.1.</span> <span class="nav-text">◇调用jQuery这个函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#◇依旧可以使用DOM-API"><span class="nav-number">5.2.</span> <span class="nav-text">◇依旧可以使用DOM API</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#◇使用一些API"><span class="nav-number">5.3.</span> <span class="nav-text">◇使用一些API</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#★jQuery不过如此？"><span class="nav-number">6.</span> <span class="nav-text">★jQuery不过如此？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#★总结"><span class="nav-number">7.</span> <span class="nav-text">★总结</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#★参考资料"><span class="nav-number">8.</span> <span class="nav-text">★参考资料</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Ambler</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("Dq3jU5t4wQnL0vV2XYOheXlz-gzGzoHsz", "IbMS66sDyF3cuvIv5oVY9kTI");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
