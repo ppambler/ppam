@@ -1,0 +1,1405 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+  
+
+<link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="let," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="★引子​    我就喜欢，直接用元素的「id」作为DOM对象。这样操作极其方便，不用每次都要「document.get……」，这让我少写了许多个字符。难道这样用真得没有bug吗？ ★使绊子​    你不是很喜欢，用「id」作为DOM对象吗？那好，这个元素的「id」值为「alert」，你猜打印的结果：">
+<meta name="keywords" content="let">
+<meta property="og:type" content="article">
+<meta property="og:title" content="let，更好的var？">
+<meta property="og:url" content="http://yoursite.com/2018/04/30/let，更好的var？/index.html">
+<meta property="og:site_name" content="Ambler">
+<meta property="og:description" content="★引子​    我就喜欢，直接用元素的「id」作为DOM对象。这样操作极其方便，不用每次都要「document.get……」，这让我少写了许多个字符。难道这样用真得没有bug吗？ ★使绊子​    你不是很喜欢，用「id」作为DOM对象吗？那好，这个元素的「id」值为「alert」，你猜打印的结果：">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-04-30T10:10:46.263Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="let，更好的var？">
+<meta name="twitter:description" content="★引子​    我就喜欢，直接用元素的「id」作为DOM对象。这样操作极其方便，不用每次都要「document.get……」，这让我少写了许多个字符。难道这样用真得没有bug吗？ ★使绊子​    你不是很喜欢，用「id」作为DOM对象吗？那好，这个元素的「id」值为「alert」，你猜打印的结果：">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/04/30/let，更好的var？/"/>
+
+
+
+
+
+  <title>let，更好的var？ | Ambler</title>
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?37b2631084262ba63364a7b95ade0726";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Ambler</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-something">
+          <a href="/something/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-something"></i> <br />
+            
+            杂记
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/30/let，更好的var？/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Ambler">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://i.loli.net/2018/04/03/5ac26820787d7.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Ambler">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">let，更好的var？</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-30T13:01:47+08:00">
+                2018-04-30
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/JavaScript/" itemprop="url" rel="index">
+                    <span itemprop="name">JavaScript</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2018/04/30/let，更好的var？/" class="leancloud_visitors" data-flag-title="let，更好的var？">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="★引子"><a href="#★引子" class="headerlink" title="★引子"></a>★引子</h2><p>​    我就喜欢，直接用元素的「id」作为DOM对象。这样操作极其方便，不用每次都要「document.get……」，这让我少写了许多个字符。难道这样用真得没有bug吗？</p>
+<h2 id="★使绊子"><a href="#★使绊子" class="headerlink" title="★使绊子"></a>★使绊子</h2><p>​    你不是很喜欢，用「id」作为DOM对象吗？那好，这个元素的「id」值为「alert」，你猜打印的结果：</p>
+<a id="more"></a>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"alert"</span>&gt;</span>Hello!World<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"x"</span>&gt;</span>我是「x」<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript">        <span class="keyword">var</span> xHtml = x.textContent</span></span><br><span class="line"><span class="javascript">        <span class="keyword">var</span> alertHtml = alert.textContent</span></span><br><span class="line"><span class="javascript">        <span class="built_in">console</span>.log(xHtml)</span></span><br><span class="line"><span class="javascript">        <span class="built_in">console</span>.log(alertHtml)</span></span><br><span class="line"><span class="undefined">    </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>不是显而易见吗？</p>
+<p>一个是『我是「x」』；一个是「Hello!World」；</p>
+<p>你确定？有时候你会存在一些错误的认识，至今未尝发觉，你总以为别人都是这样做的，自己照着做总没错吧！而且也拿到了自己想要的结果，可是你有没有想过，这样用，也许存在「大前提」呢？</p>
+<p>那好吧！我就运行一下，看一下结果，证明小白我是正确的</p>
+<p>结果：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">我是「x」</span><br><span class="line"><span class="literal">undefined</span></span><br></pre></td></tr></table></figure>
+<p>此时此刻的你，大写的一脸懵逼……心里一连串的问号——问号三连</p>
+<p>为什么？我不服，我不服……为什么「x」可以，而「alert」却不可以。明明就只有名字不同，难道连名字也是一种罪过吗？</p>
+<p>你打印一下「window」</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.dir(<span class="built_in">window</span>)</span><br></pre></td></tr></table></figure>
+<p>会发现window旗下并没有「x」这个key，却可以使用「x」</p>
+<p>如可以这样：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">window</span>.x</span><br><span class="line"><span class="built_in">window</span>[<span class="string">'x'</span>]</span><br></pre></td></tr></table></figure>
+<p>对于「alert」来说，「alert」一直是全局属性，一直在window旗下</p>
+<p>这意味着，如果你想要快捷地用「id」获取DOM对象的话，那么「id值」就不能与window旗下的全局属性冲突</p>
+<p>可是window旗下并没有显示「x」这个key啊！却可以使用……</p>
+<p>为什么？没有探究的必要了，在我看来……有些东西不需要如此执着，就比如你这个，你可以假设很多答案，如：「控制台打印的东西有问题」……「window的第一层找不着就到其旗下的document里去找，然后找到」</p>
+<p>如果非要找出个所以然，可以看一下stackoverflow的回答：</p>
+<p><a href="https://stackoverflow.com/questions/3434278/do-dom-tree-elements-with-ids-become-global-variables?noredirect=1&amp;lq=1" target="_blank" rel="noopener">Do DOM tree elements with ids become global variables?</a></p>
+<h2 id="★全局变量可耻，不能用"><a href="#★全局变量可耻，不能用" class="headerlink" title="★全局变量可耻，不能用"></a>★全局变量可耻，不能用</h2><p>​    平时用x/y/……等避开了window的属性，才能通过「id值」直接拿到对应的DOM元素对象。可是如果没有避免呢？那该如何拿到这个DOM对象？</p>
+<h3 id="◇无所畏惧，拿到DOM对象"><a href="#◇无所畏惧，拿到DOM对象" class="headerlink" title="◇无所畏惧，拿到DOM对象"></a>◇无所畏惧，拿到DOM对象</h3><p>​    随意起了一个名字，叫「alertDom」</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> alertDom = <span class="built_in">document</span>.getElementById(<span class="string">'alert'</span>)</span><br><span class="line"><span class="built_in">console</span>.log(alertDom)</span><br></pre></td></tr></table></figure>
+<p>这是通过DOM提供的API拿到的对象，还以其它API也可以拿到，如：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> alertDom1 = <span class="built_in">document</span>.querySelector(<span class="string">'#alert'</span>)</span><br><span class="line"><span class="built_in">console</span>.log(alertDom1)</span><br></pre></td></tr></table></figure>
+<h3 id="◇有所畏惧，alert-不能用了"><a href="#◇有所畏惧，alert-不能用了" class="headerlink" title="◇有所畏惧，alert()不能用了"></a>◇有所畏惧，alert()不能用了</h3><p>​    我声明了一个变量叫「alert」</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> alert = <span class="built_in">document</span>.getElementById(<span class="string">'alert'</span>)</span><br><span class="line"><span class="built_in">console</span>.log(alert)</span><br><span class="line">alert(<span class="string">'你能看到我吗？'</span>)</span><br></pre></td></tr></table></figure>
+<p>结果报错了： <code>alert is not a function</code></p>
+<p>这个声明的变量是全局变量，它与window旗下的alert冲突了，说白了，就是覆盖了它</p>
+<p>所以，你还是不要用全局变量好了，起个名字真费劲</p>
+<h2 id="★全局变量？局部变量"><a href="#★全局变量？局部变量" class="headerlink" title="★全局变量？局部变量"></a>★全局变量？局部变量</h2><h3 id="◇唯函数，方能成为局部变量"><a href="#◇唯函数，方能成为局部变量" class="headerlink" title="◇唯函数，方能成为局部变量"></a>◇唯函数，方能成为局部变量</h3><p>​    我们可以使用局部变量，以防和window的全局属性冲突了</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">y</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> alert = <span class="built_in">document</span>.querySelector(<span class="string">'#alert'</span>)</span><br><span class="line">    <span class="built_in">console</span>.log(alert)</span><br><span class="line">&#125;</span><br><span class="line">y()</span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">window</span>.alert)</span><br></pre></td></tr></table></figure>
+<p>可见全局的alert依旧是它，同时我们也得到了想要的alert值，即这个#alert元素</p>
+<p>可是问题又来了，关于函数的名字，函数的名字也是全局变量啊！它也会存在冲突的可能性的</p>
+<p>一个问题套着一个问题，如此反复……</p>
+<h3 id="◇被忽视的函数名"><a href="#◇被忽视的函数名" class="headerlink" title="◇被忽视的函数名"></a>◇被忽视的函数名</h3><p>​    函数名，作为全局变量的一份子，那么只好去掉了，改为匿名函数。可是如何调用匿名函数呢？难道还是这样子么 <code>var fn = function(){}</code>？这岂不是进入死循环了啊！</p>
+<h2 id="★立即执行函数表达式（IIFE）"><a href="#★立即执行函数表达式（IIFE）" class="headerlink" title="★立即执行函数表达式（IIFE）"></a>★立即执行函数表达式（IIFE）</h2><h3 id="◇立即执行函数"><a href="#◇立即执行函数" class="headerlink" title="◇立即执行函数"></a>◇立即执行函数</h3><p>​    函数匿名了，可以立即执行吗？</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">function() &#123;</span><br><span class="line">    var alert = document.querySelector('#alert')</span><br><span class="line">    console.log(alert)</span><br><span class="line">&#125; ()</span><br></pre></td></tr></table></figure>
+<p>结果，报语法错误： <code>Unexpected token (</code></p>
+<p>为什么？</p>
+<p>注意，这是前面的function()出错先</p>
+<blockquote>
+<p>当圆括号为了调用函数出现在函数后面时，无论在全局环境或者局部环境里遇到了这样的<code>function</code>关键字，默认的，它会将它当作是一个函数声明，而不是函数表达式，如果你不明确的告诉圆括号它是一个表达式，它会将其当作没有名字的函数声明并且抛出一个错误，因为函数声明需要一个名字。</p>
+</blockquote>
+<p>注意：</p>
+<p><code>var foo = function(){console.log(1)}()</code>这样是可以立即调用的</p>
+<p>如果是有名字的函数声明，然后立即调用呢</p>
+<p><code>function foo(){ /* code */ }();//SyntaxError: Unexpected token</code></p>
+<p>为什么？</p>
+<blockquote>
+<p>当圆括号放在一个函数表达式后面指明了这是一个被调用的函数，而圆括号放在一个声明后面便意味着完全的和前面的函数声明分开了，此时圆括号只是一个简单的代表一个括号(用来控制运算优先的括号)。</p>
+</blockquote>
+<p>毕竟圆括号里并没有表达式，你直接敲下 <code>()</code>也是会报语法错误的</p>
+<p>那加个参数，可以吧</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//现在，你把一个表达式放在圆括号里，没有抛出错误...,但是函数也并没有执行，因为：</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>)</span>&#123;<span class="comment">/* code */</span>&#125;(<span class="number">1</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">//它等同于如下，一个函数声明跟着一个完全没有关系的表达式:</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>)</span>&#123;<span class="comment">/* code */</span>&#125;</span><br><span class="line">(<span class="number">1</span>);</span><br></pre></td></tr></table></figure>
+<p>具体测试一下：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params">f</span>)</span>&#123; <span class="built_in">console</span>.log(f);<span class="keyword">return</span> f&#125;(<span class="number">1</span>); <span class="comment">//1</span></span><br><span class="line"><span class="built_in">console</span>.log(a) <span class="comment">//1</span></span><br><span class="line"><span class="keyword">var</span> b = <span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params">f</span>)</span>&#123; <span class="built_in">console</span>.log(f)&#125;(<span class="number">1</span>);</span><br><span class="line"><span class="built_in">console</span>.log(b) <span class="comment">//undefined</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>)</span>&#123; <span class="built_in">console</span>.log(<span class="number">1</span>)&#125;(<span class="number">2</span>);	<span class="comment">//2</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params">f</span>)</span>&#123; <span class="built_in">console</span>.log(f);<span class="built_in">console</span>.log(<span class="number">3</span>)&#125;(<span class="number">2</span>); <span class="comment">//2</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> k = <span class="function"><span class="keyword">function</span> <span class="title">zzz</span>(<span class="params">f</span>)</span>&#123;<span class="built_in">console</span>.log(<span class="number">5</span>);<span class="built_in">console</span>.log(f);<span class="keyword">return</span> <span class="number">7</span>&#125;(<span class="number">3</span>)</span><br><span class="line"><span class="comment">//5	3</span></span><br><span class="line">k	<span class="comment">//7</span></span><br><span class="line"><span class="keyword">var</span> q = <span class="function"><span class="keyword">function</span> <span class="title">qqq</span>(<span class="params">f</span>)</span>&#123;<span class="built_in">console</span>.log(<span class="number">5</span>);<span class="built_in">console</span>.log(f+<span class="number">1</span>);<span class="keyword">return</span> <span class="number">7</span>&#125;(<span class="number">3</span>)</span><br><span class="line"><span class="comment">//5	4</span></span><br><span class="line">q	<span class="comment">//7</span></span><br><span class="line"><span class="keyword">var</span> t = <span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params">f</span>)</span>&#123; <span class="built_in">console</span>.log(f)&#125;(<span class="number">1</span>);</span><br><span class="line"><span class="comment">//1</span></span><br><span class="line">t	<span class="comment">//undefined</span></span><br><span class="line"><span class="keyword">var</span> z = <span class="function"><span class="keyword">function</span>(<span class="params">f</span>)</span>&#123;<span class="keyword">return</span> f&#125;(<span class="number">5</span>)</span><br><span class="line">z	<span class="comment">//5</span></span><br></pre></td></tr></table></figure>
+<h3 id="◇立即执行函数表达式"><a href="#◇立即执行函数表达式" class="headerlink" title="◇立即执行函数表达式"></a>◇立即执行函数表达式</h3><p>​    如何去掉匿名函数立即执行的语法错误？错误的本质在于，语法分析器看到了 <code>function</code>这个关键字，于是认为，你这个函数声明是没有名字的啊！于是就报错了</p>
+<p>如何解决？</p>
+<blockquote>
+<p>将函数声明包裹在圆括号里来告诉语法分析器去表达一个函数表达式，因为在Javascript里，圆括号不能<strong>包含</strong>声明。因为这点，当圆括号为了包裹函数碰上了 <code>function</code>关键词，它便知道将它作为一个函数表达式去解析而不是函数声明。</p>
+</blockquote>
+<p>所以可有：</p>
+<ul>
+<li>当圆括号出现在匿名函数的末尾想要调用函数时，它会默认将函数当成是函数声明。</li>
+<li>当圆括号包裹函数时，它会默认将函数作为表达式去解析，而不是函数声明。</li>
+</ul>
+<p>测试demo：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> alert = <span class="built_in">document</span>.querySelector(<span class="string">'#alert'</span>)</span><br><span class="line">    <span class="built_in">console</span>.log(alert)</span><br><span class="line">&#125;)()</span><br><span class="line">(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> alert = <span class="built_in">document</span>.querySelector(<span class="string">'#alert'</span>)</span><br><span class="line">    <span class="built_in">console</span>.log(alert)</span><br><span class="line">&#125;())</span><br></pre></td></tr></table></figure>
+<p>注意：括号放在哪也是有区别的，虽然结果一致</p>
+<p>前者是「括号内的表达式代表函数表达式」</p>
+<p>后者是「括号内的表达式代表函数立即调用表达式」</p>
+<p><strong>可见，函数名字没了，局部变量有了，而且还有立即调用</strong></p>
+<p>除了添加圆括号，还有别的方式吗？</p>
+<blockquote>
+<p>如果你并不关心返回值，或者让你的代码尽可能的易读，你可以通过在你的函数前面带上一个一元操作符来存储字节</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">!<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;<span class="comment">/* code */</span>&#125;();</span><br><span class="line">~<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;<span class="comment">/* code */</span>&#125;();</span><br><span class="line">-<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;<span class="comment">/* code */</span>&#125;();</span><br><span class="line">+<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;<span class="comment">/* code */</span>&#125;();</span><br></pre></td></tr></table></figure>
+<h2 id="★使用let"><a href="#★使用let" class="headerlink" title="★使用let"></a>★使用let</h2><p>​    JavaScript很奇葩，为了使用局部变量，需要搞个函数，然后还要匿名，还要立即执行，立即执行报语法错误，于是，还得告诉浏览器我这个函数不是声明的</p>
+<p>为此，JavaScript升级了</p>
+<p>理论上，在JavaScript眼中，demo块是没有作用域的，但是升级了，就有作用域了。这个作用域的有无，是「let」和「var」决定的，即let眼中是有的，而var则无视</p>
+<p>测试demo：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// var的姿势：</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">var</span> alert = <span class="built_in">document</span>.querySelector(<span class="string">'#alert'</span>)</span><br><span class="line">    <span class="built_in">console</span>.log(alert)</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 等价于：</span></span><br><span class="line"><span class="keyword">var</span> alert</span><br><span class="line">&#123;</span><br><span class="line">    alert = <span class="built_in">document</span>.querySelector(<span class="string">'#alert'</span>)</span><br><span class="line">    <span class="built_in">console</span>.log(alert)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这个alert还是会跑出去，成为一个全局变量，把window的alert给覆盖了，即「块」是包不住var的，于是就用了IIFE</p>
+<p>而let是怎样的呢？</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="keyword">let</span> alert = <span class="built_in">document</span>.querySelector(<span class="string">'#alert'</span>)</span><br><span class="line">    <span class="built_in">console</span>.log(alert)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">let</span> a = <span class="number">1</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// console.log(a)//a is not defined </span></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> b = <span class="number">2</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">let</span> b = <span class="number">3</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(b)<span class="comment">//2</span></span><br></pre></td></tr></table></figure>
+<p>​    let的姿势：let也不会提升，在哪声明就在哪声明，不会变量提升；能认识这个let只有在这个块里面了，出了这个块就没人认识它了</p>
+<p>ES6之前想要用局部变量，只好用立即执行函数表达式了，ES6出来后就，不需要了，毕竟有let这个神器</p>
+<h2 id="★总结"><a href="#★总结" class="headerlink" title="★总结"></a>★总结</h2><ul>
+<li>若对元素设置id属性，值为「x」的话，那么可以通过<code>window.x</code>或者<code>window[&#39;x&#39;]</code>引用该元素，而不是使用DOM的API去获取该元素的DOM对象，而且这用的用法写入了<a href="https://www.w3.org/TR/html5/browsers.html#named-access-on-the-window-object" target="_blank" rel="noopener">html5规范</a></li>
+<li>最好不要使用全局变量，毕竟很容易导致命名冲突，或者说是变量污染</li>
+<li>要想使用好局部变量，用两种方式可以做到：一是立即执行函数表达式（IIFE）；二是使用ES6的语法let</li>
+<li>一个这样的问题「直接拿元素id的值，并没有得到该元素的DOM对象」引发出了，好几个知识点，如「let和var」、「IIFE」、「function关键字」……</li>
+<li>若是放表达式的圆括号 <code>()</code>，必须给上表达式，不然会报语法错误</li>
+</ul>
+<h2 id="★参考资料"><a href="#★参考资料" class="headerlink" title="★参考资料"></a>★参考资料</h2><blockquote>
+<p><a href="https://developer.mozilla.org/zh-CN/docs/Web/API/Document_Object_Model/Introduction" target="_blank" rel="noopener">DOM概述</a></p>
+<p><a href="https://baike.baidu.com/item/DOM%E5%AF%B9%E8%B1%A1" target="_blank" rel="noopener">DOM对象</a></p>
+<p><a href="https://segmentfault.com/a/1190000003985390" target="_blank" rel="noopener">[译] JavaScript：立即执行函数表达式（IIFE）</a></p>
+<p><a href="http://levy.work/2017-01-23-refer-dom-with-id/" target="_blank" rel="noopener">直接使用id引用DOM元素</a></p>
+<p><a href="https://www.zhihu.com/question/35832285" target="_blank" rel="noopener">为什么要有js立即执行函数，存在的意义是什么？</a></p>
+<p><a href="https://www.zhihu.com/question/52662013" target="_blank" rel="noopener">JavaScript中var、let、const区别？</a></p>
+<p><a href="http://web.jobbole.com/87534/" target="_blank" rel="noopener">函数声明和函数表达式的区别</a></p>
+</blockquote>
+<h2 id="★demo链接"><a href="#★demo链接" class="headerlink" title="★demo链接"></a>★demo链接</h2><blockquote>
+<p><a href="https://github.com/ppambler/test-demo/blob/master/M4/d29/let.html" target="_blank" rel="noopener">使用let的测试demo</a></p>
+</blockquote>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="//i.loli.net/2018/04/13/5acf9e95af815.jpg" alt="Ambler 微信支付"/>
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="//i.loli.net/2018/04/13/5acf9fd416a28.jpg" alt="Ambler 支付宝"/>
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/let/" rel="tag"># let</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/04/27/jQuery不过如此？/" rel="next" title="jQuery不过如此？">
+                <i class="fa fa-chevron-left"></i> jQuery不过如此？
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="lv-container" data-id="city" data-uid="MTAyMC8yOTMyNS81ODkz"></div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="https://i.loli.net/2018/04/03/5ac26820787d7.png"
+                alt="Ambler" />
+            
+              <p class="site-author-name" itemprop="name">Ambler</p>
+              <p class="site-description motion-element" itemprop="description">早睡早起</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/ppambler" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#★引子"><span class="nav-number">1.</span> <span class="nav-text">★引子</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#★使绊子"><span class="nav-number">2.</span> <span class="nav-text">★使绊子</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#★全局变量可耻，不能用"><span class="nav-number">3.</span> <span class="nav-text">★全局变量可耻，不能用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#◇无所畏惧，拿到DOM对象"><span class="nav-number">3.1.</span> <span class="nav-text">◇无所畏惧，拿到DOM对象</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#◇有所畏惧，alert-不能用了"><span class="nav-number">3.2.</span> <span class="nav-text">◇有所畏惧，alert()不能用了</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#★全局变量？局部变量"><span class="nav-number">4.</span> <span class="nav-text">★全局变量？局部变量</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#◇唯函数，方能成为局部变量"><span class="nav-number">4.1.</span> <span class="nav-text">◇唯函数，方能成为局部变量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#◇被忽视的函数名"><span class="nav-number">4.2.</span> <span class="nav-text">◇被忽视的函数名</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#★立即执行函数表达式（IIFE）"><span class="nav-number">5.</span> <span class="nav-text">★立即执行函数表达式（IIFE）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#◇立即执行函数"><span class="nav-number">5.1.</span> <span class="nav-text">◇立即执行函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#◇立即执行函数表达式"><span class="nav-number">5.2.</span> <span class="nav-text">◇立即执行函数表达式</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#★使用let"><span class="nav-number">6.</span> <span class="nav-text">★使用let</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#★总结"><span class="nav-number">7.</span> <span class="nav-text">★总结</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#★参考资料"><span class="nav-number">8.</span> <span class="nav-text">★参考资料</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#★demo链接"><span class="nav-number">9.</span> <span class="nav-text">★demo链接</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Ambler</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("Dq3jU5t4wQnL0vV2XYOheXlz-gzGzoHsz", "IbMS66sDyF3cuvIv5oVY9kTI");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
