@@ -70,7 +70,7 @@
 
 
 
-  <meta name="keywords" content="jQuery," />
+  <meta name="keywords" content="轮播," />
 
 
 
@@ -81,20 +81,18 @@
 
 
 
-<meta name="description" content="★引子​    经常用jQuery库的API，真的好吗？为何自己不尝试着实现一个jQuery的API…… ★想要实现的功能 将当前文档中所有 div 的 class 都添加一个 red 将当前文档中所有 div 的 textContent都 变为 hi">
-<meta name="keywords" content="jQuery">
+<meta name="description" content="★引子常见的网站多多少少都会有「轮播」的影子，为什么会有轮播呢？因为轮播图是焦点图的优先选择啊！不过，轮播图有时也会带来负面影响，可这是我目前该关心的事吗？ 不问所以然，实现一个简单的轮播……">
+<meta name="keywords" content="轮播">
 <meta property="og:type" content="article">
-<meta property="og:title" content="实现一个jQuery的API">
-<meta property="og:url" content="http://yoursite.com/2018/04/26/实现一个jQuery的API/index.html">
+<meta property="og:title" content="实现一个简单的轮播">
+<meta property="og:url" content="http://yoursite.com/2018/05/01/实现一个简单的轮播/index.html">
 <meta property="og:site_name" content="Ambler">
-<meta property="og:description" content="★引子​    经常用jQuery库的API，真的好吗？为何自己不尝试着实现一个jQuery的API…… ★想要实现的功能 将当前文档中所有 div 的 class 都添加一个 red 将当前文档中所有 div 的 textContent都 变为 hi">
+<meta property="og:description" content="★引子常见的网站多多少少都会有「轮播」的影子，为什么会有轮播呢？因为轮播图是焦点图的优先选择啊！不过，轮播图有时也会带来负面影响，可这是我目前该关心的事吗？ 不问所以然，实现一个简单的轮播……">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://otty6pwsj.bkt.clouddn.com/18-4-27/93132329.jpg">
-<meta property="og:updated_time" content="2018-04-27T15:09:17.187Z">
+<meta property="og:updated_time" content="2018-05-02T09:09:49.005Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="实现一个jQuery的API">
-<meta name="twitter:description" content="★引子​    经常用jQuery库的API，真的好吗？为何自己不尝试着实现一个jQuery的API…… ★想要实现的功能 将当前文档中所有 div 的 class 都添加一个 red 将当前文档中所有 div 的 textContent都 变为 hi">
-<meta name="twitter:image" content="http://otty6pwsj.bkt.clouddn.com/18-4-27/93132329.jpg">
+<meta name="twitter:title" content="实现一个简单的轮播">
+<meta name="twitter:description" content="★引子常见的网站多多少少都会有「轮播」的影子，为什么会有轮播呢？因为轮播图是焦点图的优先选择啊！不过，轮播图有时也会带来负面影响，可这是我目前该关心的事吗？ 不问所以然，实现一个简单的轮播……">
 
 
 
@@ -124,13 +122,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/04/26/实现一个jQuery的API/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/05/01/实现一个简单的轮播/"/>
 
 
 
 
 
-  <title>实现一个jQuery的API | Ambler</title>
+  <title>实现一个简单的轮播 | Ambler</title>
   
 
 
@@ -321,7 +319,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/26/实现一个jQuery的API/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/01/实现一个简单的轮播/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Ambler">
@@ -338,7 +336,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">实现一个jQuery的API</h1>
+          <h1 class="post-title" itemprop="name headline">实现一个简单的轮播</h1>
         
 
         <div class="post-meta">
@@ -350,8 +348,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-26T16:41:52+08:00">
-                2018-04-26
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-01T10:48:15+08:00">
+                2018-05-01
               </time>
             
 
@@ -373,8 +371,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/JavaScript/" itemprop="url" rel="index">
-                    <span itemprop="name">JavaScript</span>
+                  <a href="/categories/jQuery/" itemprop="url" rel="index">
+                    <span itemprop="name">jQuery</span>
                   </a>
                 </span>
 
@@ -390,7 +388,7 @@
 
           
           
-             <span id="/2018/04/26/实现一个jQuery的API/" class="leancloud_visitors" data-flag-title="实现一个jQuery的API">
+             <span id="/2018/05/01/实现一个简单的轮播/" class="leancloud_visitors" data-flag-title="实现一个简单的轮播">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -421,34 +419,44 @@
       
 
       
-        <h2 id="★引子"><a href="#★引子" class="headerlink" title="★引子"></a>★引子</h2><p>​    经常用jQuery库的API，真的好吗？为何自己不尝试着实现一个jQuery的API……</p>
-<h2 id="★想要实现的功能"><a href="#★想要实现的功能" class="headerlink" title="★想要实现的功能"></a>★想要实现的功能</h2><ul>
-<li>将当前文档中所有 div 的 class 都添加一个 red</li>
-<li>将当前文档中所有 div 的 textContent都 变为 hi</li>
-</ul>
+        <h2 id="★引子"><a href="#★引子" class="headerlink" title="★引子"></a>★引子</h2><p>常见的网站多多少少都会有「轮播」的影子，为什么会有轮播呢？因为轮播图是焦点图的优先选择啊！不过，轮播图有时也会带来负面影响，可这是我目前该关心的事吗？</p>
+<p>不问所以然，实现一个简单的轮播……</p>
 <a id="more"></a>
-<h2 id="★如何实现"><a href="#★如何实现" class="headerlink" title="★如何实现"></a>★如何实现</h2><h3 id="◇搞一个基本的测试骨架"><a href="#◇搞一个基本的测试骨架" class="headerlink" title="◇搞一个基本的测试骨架"></a>◇搞一个基本的测试骨架</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span>我是1div<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span>我是2div<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span>我是3div<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span>我是4div<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span>我是5div<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h3 id="◇给上简单的皮肤"><a href="#◇给上简单的皮肤" class="headerlink" title="◇给上简单的皮肤"></a>◇给上简单的皮肤</h3><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;<span class="selector-tag">style</span>&gt;</span><br><span class="line">    <span class="selector-class">.red</span> &#123;</span><br><span class="line">        <span class="attribute">color</span>: red;</span><br><span class="line">    &#125;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure>
-<h3 id="◇按你想要的实现行为"><a href="#◇按你想要的实现行为" class="headerlink" title="◇按你想要的实现行为"></a>◇按你想要的实现行为</h3><h4 id="定义一个全局变量"><a href="#定义一个全局变量" class="headerlink" title="定义一个全局变量"></a>定义一个全局变量</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">window</span>.jQuery = <span class="function"><span class="keyword">function</span> (<span class="params">nodeOrSelector</span>) </span>&#123;&#125;</span><br></pre></td></tr></table></figure>
-<p>这个全局变量是个函数，形式参数可为「节点」或「选择器」，总而言之即是可传入节点对象或字符串。</p>
-<p>之所以定义一个去全局变量，是为了有个命名空间，好让自己所写的API都归于jQuery旗下</p>
-<h4 id="开搞函数体"><a href="#开搞函数体" class="headerlink" title="开搞函数体"></a>开搞函数体</h4><h5 id="声明一个局部变量"><a href="#声明一个局部变量" class="headerlink" title="声明一个局部变量"></a>声明一个局部变量</h5><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> nodes = &#123;&#125;</span><br></pre></td></tr></table></figure>
-<p>这个局部变量很重要，它是个伪数组</p>
-<h5 id="特性检测"><a href="#特性检测" class="headerlink" title="特性检测"></a>特性检测</h5><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (<span class="keyword">typeof</span> nodeOrSelector === <span class="string">'string'</span>) &#123;</span><br><span class="line">    <span class="keyword">let</span> temp = <span class="built_in">document</span>.querySelectorAll(nodeOrSelector)</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; temp.length; i++) &#123;</span><br><span class="line">        nodes[i] = temp[i]</span><br><span class="line">    &#125;</span><br><span class="line">    nodes.length = temp.length</span><br><span class="line">&#125; <span class="keyword">else</span> <span class="keyword">if</span> (nodeOrSelector <span class="keyword">instanceof</span> Node) &#123;</span><br><span class="line">    nodes = &#123;</span><br><span class="line">        <span class="number">0</span>: nodeOrSelector,</span><br><span class="line">        length: <span class="number">1</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>需要判断传入的参数是啥类型的？假如是字符串，注意这个字符串是选择器，根据选择器得到一个节点组成的伪数组，遍历它，把它扔到局部变量里去，这样就可以砍掉多余的NodeList接口</p>
-<p>如果实参是Node的实例的话，那么nodes就只有一个元素了</p>
-<h5 id="添加「addClass」API"><a href="#添加「addClass」API" class="headerlink" title="添加「addClass」API"></a>添加「addClass」API</h5><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">nodes.addClass = <span class="function"><span class="keyword">function</span> (<span class="params">className</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; <span class="keyword">this</span>.length; i++) &#123;</span><br><span class="line">        <span class="keyword">this</span>[i].classList.add(className)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h5 id="添加「setText」API"><a href="#添加「setText」API" class="headerlink" title="添加「setText」API"></a>添加「setText」API</h5><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">nodes.setText = <span class="function"><span class="keyword">function</span> (<span class="params">text</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; <span class="keyword">this</span>.length; i++) &#123;</span><br><span class="line">        <span class="keyword">this</span>[i].textContent = text</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h5 id="返回值"><a href="#返回值" class="headerlink" title="返回值"></a>返回值</h5><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">return</span> nodes</span><br></pre></td></tr></table></figure>
-<h3 id="◇测试写的API"><a href="#◇测试写的API" class="headerlink" title="◇测试写的API"></a>◇测试写的API</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">window.$ = jQuery</span><br><span class="line"></span><br><span class="line">var $div = $(&apos;div&apos;)</span><br><span class="line">$div.addClass(&apos;red&apos;) // 可将所有 div 的 class 添加一个 red</span><br><span class="line">$div.setText(&apos;hi&apos;) // 可将所有 div 的 textContent 变为 hi</span><br></pre></td></tr></table></figure>
-<p>这里搞了个别名$</p>
-<p><a href="https://github.com/ppambler/test-demo/blob/master/M4/d26/%E5%AE%9E%E7%8E%B0%E4%B8%80%E4%B8%AAjQuery%E7%9A%84API.html" target="_blank" rel="noopener">「实现一个jQuery的API」的github源码</a></p>
-<h2 id="★总结"><a href="#★总结" class="headerlink" title="★总结"></a>★总结</h2><ol>
-<li><p>实现两个API是否用到了闭包</p>
-<p><img src="http://otty6pwsj.bkt.clouddn.com/18-4-27/93132329.jpg" alt=""></p>
-<p>我是用this访问的，所以没用到闭包</p>
+<h2 id="★用jQuery实现简单的轮播"><a href="#★用jQuery实现简单的轮播" class="headerlink" title="★用jQuery实现简单的轮播"></a>★用jQuery实现简单的轮播</h2><h3 id="◇搞一个简单的骨架"><a href="#◇搞一个简单的骨架" class="headerlink" title="◇搞一个简单的骨架"></a>◇搞一个简单的骨架</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 搞4张图片 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"window"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"images"</span> <span class="attr">id</span>=<span class="string">images</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ5W5k8pZ4VXyZsIhTEXwtO-P3LmxCEJAlqG74onj4GGXTiMetE1A"</span> <span class="attr">alt</span>=<span class="string">""</span></span></span><br><span class="line"><span class="tag">            <span class="attr">width</span>=<span class="string">284</span> <span class="attr">height</span>=<span class="string">177</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT0ANas9lOWusFru_yrCZ_xHovfxR5saXyrYW0kbKg3jCTe2tMeNQ"</span> <span class="attr">alt</span>=<span class="string">""</span></span></span><br><span class="line"><span class="tag">            <span class="attr">width</span>=<span class="string">284</span> <span class="attr">height</span>=<span class="string">177</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTwXu4i_F3GwAt0P7KtTnSDqjpqaB6xl_v7WzydZY_81moLH2sv"</span> <span class="attr">alt</span>=<span class="string">""</span></span></span><br><span class="line"><span class="tag">            <span class="attr">width</span>=<span class="string">284</span> <span class="attr">height</span>=<span class="string">177</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoGY1n-T9rTSlUHY3XA6Brmv1mWJMHqV7RVD5hLWrMP0ImpS29-Q"</span> <span class="attr">alt</span>=<span class="string">""</span></span></span><br><span class="line"><span class="tag">            <span class="attr">width</span>=<span class="string">284</span> <span class="attr">height</span>=<span class="string">177</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">span</span> <span class="attr">id</span>=<span class="string">'buttons'</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">span</span>&gt;</span>第1张<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">span</span>&gt;</span>第2张<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">span</span>&gt;</span>第3张<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">span</span>&gt;</span>第4张<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>这里的「alt」我就不给上值了，反正只是测试……</p>
+<p>这里的4张图片，不是百度爬的，是谷歌爬的，百度的会防盗链，即此刻会有用，过段时间这图片链接就不能用了。</p>
+<p>给图片加上宽高，这是图片的原始大小「<code>284*177</code>」，其它大小的图可通过Photoshop等工具调整，不过遵循的原则是「不要让图片变形了」。为什么要给定宽高属性呢？如果不给的话，就会触发重排，就像是「一个数组有几百个元素，插入一个元素，意味着，后面的元素会因此而平移一格」，这实在是很消耗CPU，你给定了宽高，则告知此位置的大小是「<code>284*177</code>」，这样一来等加载完图片的时候，就不会影响后面的元素了。好比是一矩形区域划分了10个格，用于停放单车，不多也不少……虽说要遵循「内容样式行为分离」的原则，可这里不需要这样做</p>
+<h3 id="◇添加简单的皮肤"><a href="#◇添加简单的皮肤" class="headerlink" title="◇添加简单的皮肤"></a>◇添加简单的皮肤</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined">    .images &#123;</span></span><br><span class="line"><span class="undefined">        display: flex;</span></span><br><span class="line"><span class="undefined">        align-items: flex-start;</span></span><br><span class="line"><span class="undefined">        transition: all 0.5s;</span></span><br><span class="line"><span class="undefined">    &#125;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined">    .images&gt;img &#123;</span></span><br><span class="line"><span class="undefined">        vertical-align: top;</span></span><br><span class="line"><span class="undefined">    &#125;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined">    .window &#123;</span></span><br><span class="line"><span class="undefined">        width: 284px;</span></span><br><span class="line"><span class="undefined">        overflow: hidden;</span></span><br><span class="line"><span class="undefined">    &#125;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined">    .red &#123;</span></span><br><span class="line"><span class="undefined">        color: red;</span></span><br><span class="line"><span class="undefined">    &#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>这里用到了flex布局，相较于浮动布局，明显少了许多代码，毕竟若用浮动的话，还需要对父元素清除浮动呢</p>
+<h3 id="◇给上行为"><a href="#◇给上行为" class="headerlink" title="◇给上行为"></a>◇给上行为</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">    <span class="comment">// 拿到数据结构，伪数组</span></span><br><span class="line">    <span class="keyword">var</span> allButtons = $(<span class="string">'#buttons &gt; span'</span>)</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 遍历这个家伙，为其旗下的每个元素都绑定一个点击事件</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; allButtons.length; i++) &#123;</span><br><span class="line">        $(allButtons[i]).on(<span class="string">'click'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">x</span>) </span>&#123;</span><br><span class="line">            <span class="comment">// 拿到用户点击的那个元素，虽然target也能做到，但这是在没有事件委托的情况下</span></span><br><span class="line">            <span class="comment">// index()得到当前元素排行老几，这是其父元素的范围</span></span><br><span class="line">            <span class="keyword">var</span> index = $(x.currentTarget).index()</span><br><span class="line">            <span class="built_in">console</span>.log(index)</span><br><span class="line">            <span class="comment">// 动态生成平移的值</span></span><br><span class="line">            <span class="keyword">var</span> p = index * <span class="number">-284</span></span><br><span class="line">            $(<span class="string">'#images'</span>).css(&#123;</span><br><span class="line">                transform: <span class="string">'translate('</span> + p + <span class="string">'px)'</span></span><br><span class="line">            &#125;)</span><br><span class="line"></span><br><span class="line">            <span class="comment">// 解决点击事件与自动播放的冲突</span></span><br><span class="line">            n = index</span><br><span class="line">            allButtons.eq(n)</span><br><span class="line">                .addClass(<span class="string">'red'</span>)</span><br><span class="line">                .siblings(<span class="string">'.red'</span>).removeClass(<span class="string">'red'</span>)</span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 实现自动播放，取余很关键</span></span><br><span class="line">    <span class="comment">// eq()可以根据参数找出对应的DOM，并封装为jQuery对象</span></span><br><span class="line">    <span class="comment">// trigger(),触发()中的事件参数，如点击事件</span></span><br><span class="line">    <span class="keyword">var</span> n = <span class="number">0</span>;</span><br><span class="line">    <span class="comment">// 拿到按钮个数</span></span><br><span class="line">    <span class="keyword">var</span> size = allButtons.length</span><br><span class="line">    allButtons.eq(n % size).trigger(<span class="string">'click'</span>)</span><br><span class="line">        .addClass(<span class="string">'red'</span>)</span><br><span class="line">        .siblings(<span class="string">'.red'</span>).removeClass(<span class="string">'red'</span>)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> timeId = setInterval(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">        n += <span class="number">1</span></span><br><span class="line">        allButtons.eq(n % size).trigger(<span class="string">'click'</span>)</span><br><span class="line">            .addClass(<span class="string">'red'</span>)</span><br><span class="line">            .siblings(<span class="string">'.red'</span>).removeClass(<span class="string">'red'</span>)</span><br><span class="line">    &#125;, <span class="number">1000</span>)</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 鼠标移进某个元素，就砸闹钟</span></span><br><span class="line">    $(<span class="string">'.window'</span>).on(<span class="string">'mouseenter'</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="built_in">window</span>.clearInterval(timeId)</span><br><span class="line">    &#125;)</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 鼠标移出，就添加闹钟</span></span><br><span class="line">    $(<span class="string">'.window'</span>).on(<span class="string">'mouseleave'</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        timeId = setInterval(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">            n += <span class="number">1</span></span><br><span class="line">            allButtons.eq(n % size).trigger(<span class="string">'click'</span>)</span><br><span class="line">                .addClass(<span class="string">'red'</span>)</span><br><span class="line">                .siblings(<span class="string">'.red'</span>).removeClass(<span class="string">'red'</span>)</span><br><span class="line">        &#125;, <span class="number">3000</span>)</span><br><span class="line">    &#125;)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure>
+<p>不是说好，样式行为分离吗？可为啥JavaScript-demo里存在样式？</p>
+<p>如果不这样做呢？设有100张图片，这意味着CSS-demo里需要写100次的「transform: translate(n)；」(n每次增加-284，从0开始)，然后你就简单的使用JavaScript-demo添加「class」,移除「class」。</p>
+<p>原则并非绝对坚守，总有例外，利大于弊或弊大于利，请自行斟酌</p>
+<p>违反原则，使用JavaScript-demo动态生成样式，这样就不用繁琐的切换状态、移除状态了啊</p>
+<h2 id="★优化demo"><a href="#★优化demo" class="headerlink" title="★优化demo"></a>★优化demo</h2><p>不优化CSS先，先把JavaScript-demo简单优化一下，如「找到重复的demo，就存在优化的可能」</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> allButtons = $(<span class="string">'#buttons &gt; span'</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; allButtons.length; i++) &#123;</span><br><span class="line">    $(allButtons[i]).on(<span class="string">'click'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">x</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">var</span> index = $(x.currentTarget).index()</span><br><span class="line">        <span class="keyword">var</span> p = index * <span class="number">-284</span></span><br><span class="line">        $(<span class="string">'#images'</span>).css(&#123;</span><br><span class="line">            transform: <span class="string">'translate('</span> + p + <span class="string">'px)'</span></span><br><span class="line">        &#125;)</span><br><span class="line">        n = index</span><br><span class="line">        activeButton(allButtons.eq(n))</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> n = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">var</span> size = allButtons.length</span><br><span class="line">playSlide(n % size)</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> timerId = setTimer()</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">playSlide</span>(<span class="params">index</span>) </span>&#123;</span><br><span class="line">    allButtons.eq(index).trigger(<span class="string">'click'</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">setTimer</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> setInterval(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">        n += <span class="number">1</span></span><br><span class="line">        playSlide(n % size)</span><br><span class="line">    &#125;, <span class="number">3000</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">activeButton</span>(<span class="params">$button</span>) </span>&#123;</span><br><span class="line">    $button</span><br><span class="line">        .addClass(<span class="string">'red'</span>)</span><br><span class="line">        .siblings(<span class="string">'.red'</span>).removeClass(<span class="string">'red'</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">$(<span class="string">'.window'</span>).on(<span class="string">'mouseenter'</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">window</span>.clearInterval(timerId)</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">$(<span class="string">'.window'</span>).on(<span class="string">'mouseleave'</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    timerId = setTimer()</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p>这个demo依旧存在优化的可能，但这需要用到面向对象的知识</p>
+<p>整个过程：拿到所有按钮，给所有按钮添加监听事件，按钮被点击了，为「#images」添加样式，同时会激活按钮（如红色）；接着是自动播放的功能，初始化第一个按钮为0，然后播放、设置闹钟循环播放。鼠标移入砸闹钟，鼠标移出，接着播放</p>
+<p>这里的每个函数都不超过5行，甚是好懂，除了最上面的那个点击后触发的函数</p>
+<h2 id="★总结"><a href="#★总结" class="headerlink" title="★总结"></a>★总结</h2><ul>
+<li><p>区分拿到的变量是DOM对象还是jQuery对象，为什么？这个API似乎不能用啊！</p>
 </li>
-</ol>
+<li><p>有时看懂了他人的demo思路，可自己依旧不会写，依旧想不出来，其实这很正常。为什么？写demo就像是你学写作文一样，如老师布置作业要求写一篇散文，你看人家的散文能看懂，可是轮到自己写了，就GG了。想起高中时，作文都是40分，我就很郁闷了，及格分36分，就多了4分……不管写多少次依旧是40分，难道我不管敲多少次demo，demo水平依旧是原地踏步吗？其实自己根本没有想过如何改变自己的写作风格，依旧是最简单的套路，也许偶尔会有亮点，可这恰恰是某个时刻所谓的「灵感」，而这种「灵感」过去了，就过去了，它不会停留，更不会影响你的写作行为，因为连你也不知道「为什么就写出来了」，借用一句话说就是「我能怎么办？我也很绝望呀！」</p>
+<p>所以你可以先尝试着模仿，如「看看朱自清的散文是怎么写的？其他人的散文又是怎么写的？」，这里学习一点，那里学习一点，逐渐地有了自己的风格，也许这需要一年、两年、三年……</p>
+<p>这个学习过程是集大家之所长的，为此才能形成自己的风格。要想自己写出一篇好的散文，做梦！你必须看很多人的散文才可以。同理，demo亦是如此，想要自己写出一个有思路的demo，同样是做梦！你必须有个积淀的过程，这个过程至少需要半年，如这个轮播，你至少需要看3个人是如何实现轮播的，然后你就会发现「咦！大家写轮播都是这么一个套路」，那么你就学会了，以后你写轮播同样根据这个套路来搞。</p>
+<p>能否想出新的套路呢？就看你有没有这个灵感了……所以自己想不出怎样写是很正常的</p>
+</li>
+<li><p>jQuery的API——「trigger()」，自动触发事件，如其参数为 <code>&#39;click&#39;</code>，那么就不需要自己去点击元素才可以触发点击事件了，它会自动触发</p>
+</li>
+<li><p>需要重新学习一下CSS了</p>
+</li>
+</ul>
+<h2 id="★参考资料"><a href="#★参考资料" class="headerlink" title="★参考资料"></a>★参考资料</h2><p><a href="https://www.zhihu.com/question/34416222" target="_blank" rel="noopener">banner和焦点图的区别？</a></p>
+<p><a href="http://www.iyunying.org/seo/dataanalysis/86355.html" target="_blank" rel="noopener">轮播图这样的交互方式，真的有效吗？</a></p>
+<p><a href="https://www.zhihu.com/question/46932767" target="_blank" rel="noopener">如何看待“沉浸式阅读/浸入式阅读”一词的流行？</a></p>
+<h2 id="★demo链接"><a href="#★demo链接" class="headerlink" title="★demo链接"></a>★demo链接</h2><blockquote>
+<p><a href="https://github.com/ppambler/test-demo/blob/master/M4/d30/%E8%87%AA%E5%B7%B1%E5%AE%9E%E7%8E%B0%E4%B8%80%E4%B8%AA%E7%AE%80%E5%8D%95%E8%BD%AE%E6%92%AD.html" target="_blank" rel="noopener">用jQuery实现简单的轮播</a></p>
+</blockquote>
 
       
     </div>
@@ -495,7 +503,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/jQuery/" rel="tag"># jQuery</a>
+            <a href="/tags/轮播/" rel="tag"># 轮播</a>
           
         </div>
       
@@ -508,8 +516,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/02/21/hello-world/" rel="next" title="Hello World">
-                <i class="fa fa-chevron-left"></i> Hello World
+              <a href="/2018/04/30/let，更好的var？/" rel="next" title="let，更好的var？">
+                <i class="fa fa-chevron-left"></i> let，更好的var？
               </a>
             
           </div>
@@ -517,10 +525,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/04/27/jQuery不过如此？/" rel="prev" title="jQuery不过如此？">
-                jQuery不过如此？ <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -671,7 +675,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#★引子"><span class="nav-number">1.</span> <span class="nav-text">★引子</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#★想要实现的功能"><span class="nav-number">2.</span> <span class="nav-text">★想要实现的功能</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#★如何实现"><span class="nav-number">3.</span> <span class="nav-text">★如何实现</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#◇搞一个基本的测试骨架"><span class="nav-number">3.1.</span> <span class="nav-text">◇搞一个基本的测试骨架</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#◇给上简单的皮肤"><span class="nav-number">3.2.</span> <span class="nav-text">◇给上简单的皮肤</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#◇按你想要的实现行为"><span class="nav-number">3.3.</span> <span class="nav-text">◇按你想要的实现行为</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#定义一个全局变量"><span class="nav-number">3.3.1.</span> <span class="nav-text">定义一个全局变量</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#开搞函数体"><span class="nav-number">3.3.2.</span> <span class="nav-text">开搞函数体</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#声明一个局部变量"><span class="nav-number">3.3.2.1.</span> <span class="nav-text">声明一个局部变量</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#特性检测"><span class="nav-number">3.3.2.2.</span> <span class="nav-text">特性检测</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#添加「addClass」API"><span class="nav-number">3.3.2.3.</span> <span class="nav-text">添加「addClass」API</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#添加「setText」API"><span class="nav-number">3.3.2.4.</span> <span class="nav-text">添加「setText」API</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#返回值"><span class="nav-number">3.3.2.5.</span> <span class="nav-text">返回值</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#◇测试写的API"><span class="nav-number">3.4.</span> <span class="nav-text">◇测试写的API</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#★总结"><span class="nav-number">4.</span> <span class="nav-text">★总结</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#★引子"><span class="nav-number">1.</span> <span class="nav-text">★引子</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#★用jQuery实现简单的轮播"><span class="nav-number">2.</span> <span class="nav-text">★用jQuery实现简单的轮播</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#◇搞一个简单的骨架"><span class="nav-number">2.1.</span> <span class="nav-text">◇搞一个简单的骨架</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#◇添加简单的皮肤"><span class="nav-number">2.2.</span> <span class="nav-text">◇添加简单的皮肤</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#◇给上行为"><span class="nav-number">2.3.</span> <span class="nav-text">◇给上行为</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#★优化demo"><span class="nav-number">3.</span> <span class="nav-text">★优化demo</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#★总结"><span class="nav-number">4.</span> <span class="nav-text">★总结</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#★参考资料"><span class="nav-number">5.</span> <span class="nav-text">★参考资料</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#★demo链接"><span class="nav-number">6.</span> <span class="nav-text">★demo链接</span></a></li></ol></div>
             
 
           </div>
